@@ -55,11 +55,19 @@
                 layout: "SIDEBAR",
             },
 
+            whiteboardEnabled: true,
+            permissions: {
+                // ...
+                drawOnWhiteboard: true,
+                toggleWhiteboard: true,
+            },
+
             joinScreen: {
                 visible: true, // Show the join screen ?
                 title: "Remaja Masjid Baitul Hikmah", // Meeting title
                 meetingUrl: window.location.href, // Meeting joining url
             },
+
             };
             
             meeting.init(config);
