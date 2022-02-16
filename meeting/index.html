@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<head>
+    <title>Meeting Room | Remaja Masjid Baitul Hikmah | SMA Negeri 3 Bantul</title>
+</head>
+<body>
+    <script>
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        
+        script.addEventListener("load", function (event) {
+            const meeting = new VideoSDKMeeting();
+
+            const config = {
+            name: "Farras Daffa Yassarramadhan",
+            apiKey: "0cb41ea6-7ac2-4b89-9ccf-8e4dd7e6e2e1", 
+            meetingId: "remas-smagaba", 
+            redirectOnLeave: "https://remas-smagaba.github.io",
+            micEnabled: true,
+            webcamEnabled: true,
+            participantCanToggleSelfWebcam: true,
+            participantCanToggleSelfMic: true,
+
+            screenShareEnabled: true,
+            chatEnabled: true,
+            raiseHandEnabled: true,
+
+            brandingEnabled: true,
+            brandLogoURL: "https://remas-smagaba.github.io/assets/img/gallery/logo-icon.png",
+            brandName: "Remaja Masjid Baitul Hikmah",
+            poweredBy: false,
+
+            permissions: {
+                askToJoin: false,
+                toggleParticipantWebcam: false,
+                toggleParticipantMic: false,
+            },
+
+            permissions: {
+                // ... other permissions
+                removeParticipant: false,
+            },
+
+            pin: {
+                allowed: true,
+                layout: "SIDEBAR",
+            },
+
+            joinScreen: {
+                visible: true, // Show the join screen ?
+                title: "Remaja Masjid Baitul Hikmah", // Meeting title
+                meetingUrl: window.location.href, // Meeting joining url
+            },
+            };
+            
+            meeting.init(config);
+        });
+        
+        script.src =
+            "https://sdk.videosdk.live/rtc-js-prebuilt/0.1.29/rtc-js-prebuilt.js";
+            
+        document.getElementsByTagName("head")[0].appendChild(script);
+        
+    </script>
+</body>
